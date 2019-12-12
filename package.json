@@ -1,0 +1,22 @@
+{
+  "name": "quest-prequalifier",
+  "version": "1.0.0",
+  "description": "Checks if users have pre-qualified for quests in a list",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rapid-eth/quest-prequalifier.git"
+  },
+  "author": "Joe Bernitt",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rapid-eth/quest-prequalifier/issues"
+  },
+  "homepage": "https://github.com/rapid-eth/quest-prequalifier#readme",
+  "dependencies": {
+    "ethers": "^4.0.40"
+  }
+}
