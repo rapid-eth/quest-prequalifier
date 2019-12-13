@@ -16,9 +16,8 @@ module.exports = async (address, quests) => {
     txHistory = txHistory.filter(tx => compareHexStrings(tx.from, address))
 
     // check list against known addresses to verify
-    let txQuests = quests.filter(q => q.config.type === "transaction")
+    let txQuests = quests.filter(q => !!q.config && q.config.type === "transaction")
     //console.log(txQuests)
-
     
     let txToAddresses = []
     for (let i = 0; i < txQuests.length; i++) {
@@ -70,7 +69,7 @@ module.exports = async (address, quests) => {
                 config: q.config
             }
             if (await verifyTransaction(b)) {
-                validQuests.push({questId: q.questId, tx: tx.hash})
+                validQuests.push({id: q.id, tx: tx.hash})
                 break
             }
         }
