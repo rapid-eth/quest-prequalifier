@@ -1,7 +1,11 @@
-const tx = require('./pretx')
-const event = require('./preevent')
+const tx = require('./tx')
+const event = require('./event')
+const {verifyTransaction} = require('./verifyTx')
+const {verifyEvent} = require('./verifyEvent')
 
 module.exports = {
     prequalifierCheckTx: tx,
-    prequalifierCheckEvent: event
+    prequalifierCheckEvent: event,
+    verifyTransaction,
+    verifyEvent
 }
