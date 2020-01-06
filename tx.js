@@ -17,7 +17,6 @@ module.exports = async (address, quests) => {
 
     // check list against known addresses to verify
     let txQuests = quests.filter(q => !!q.config && q.config.type === "transaction")
-    //console.log(txQuests)
     
     let txToAddresses = []
     for (let i = 0; i < txQuests.length; i++) {

@@ -6,14 +6,17 @@ module.exports = async (address, quests) => {
     //for each quest event, run verify event
     for (let i = 0; i < eventQuests.length; i++) {
         const q = eventQuests[i];
-        console.log(q)
 
         let b = { userAddress: address, config: q.config}
         let v = await verifyEvent(b)
         if (v) {
-            verifiedEvents.push(q)
+            let ev = {
+                id: q.id,
+                config: q.config,
+                certificate: q.certificate
+            }
+            verifiedEvents.push(ev)
         }
     }
-    //console.log(verifiedEvents)
     return verifiedEvents
 }
